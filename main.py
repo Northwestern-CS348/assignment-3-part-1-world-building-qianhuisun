@@ -121,7 +121,7 @@ class KBTest(unittest.TestCase):
             'fact: (movable disk5 peg1 peg3)',
         ]
         self.checkKb(th.kb, required, forbidden)
-    """
+
     def test07(self):
         th = Puzzle8Game()
         th.read('puzzle8_top_right_empty.txt')
@@ -176,7 +176,7 @@ class KBTest(unittest.TestCase):
             'fact: (movable tile5 pos3 pos3 pos3 pos3)',
         ]
         self.checkKb(p8.kb, required, forbidden)
-"""
+
 
 if __name__ == '__main__':
     unittest.main()
