@@ -27,5 +27,13 @@ rule: ((at ?pieceA ?x pos2) (at ?pieceB ?x pos1)) -> (adjacent ?pieceA ?pieceB)
 rule: ((at ?pieceA ?x pos2) (at ?pieceB ?x pos3)) -> (adjacent ?pieceA ?pieceB)
 rule: ((at ?pieceA pos2 ?y) (at ?pieceB pos1 ?y)) -> (adjacent ?pieceA ?pieceB)
 rule: ((at ?pieceA pos2 ?y) (at ?pieceB pos3 ?y)) -> (adjacent ?pieceA ?pieceB)
+"""
+May cause support in circle!
+How to avoid support in circle in longterm?
 rule: ((adjacent ?pieceA ?pieceB)) -> (adjacent ?pieceB ?pieceA)
+"""
+rule: ((at ?pieceA ?x pos2) (at ?pieceB ?x pos1)) -> (adjacent ?pieceB ?pieceA)
+rule: ((at ?pieceA ?x pos2) (at ?pieceB ?x pos3)) -> (adjacent ?pieceB ?pieceA)
+rule: ((at ?pieceA pos2 ?y) (at ?pieceB pos1 ?y)) -> (adjacent ?pieceB ?pieceA)
+rule: ((at ?pieceA pos2 ?y) (at ?pieceB pos3 ?y)) -> (adjacent ?pieceB ?pieceA)
 rule: ((adjacent ?piece empty) (at ?piece ?initialX ?initialY) (at empty ?targetX ?targetY)) -> (movable ?piece ?initialX ?initialY ?targetX ?targetY)
